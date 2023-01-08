@@ -1,0 +1,56 @@
+{% extends 'main/upmeny/base.html' %}
+
+{% load static %}
+
+{% block shapka %}
+Женское
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/women.css' %}" >
+{% endblock %}
+
+
+{% block basa %}
+
+
+<div class="meny_niz">
+    <u1 class="n">
+        <li><a href="/newwomen">Новинки</a></li>
+        <li><a href="/odezdawomen">Одежда</a></li>
+        <li><a href="/obuwwomen">Обувь</a></li>
+        <li><a href="/acsesuariwomen">Аксесуары</a></li>
+        <li><a href="/salewomen">SALE</a></li>
+    </u1>
+</div>
+
+
+<div class="sectio-top">
+    <img src="{% static 'img/Шапка.jpg' %}">
+</div>
+
+<div class="top_tovar">
+    <h1 class="tovar">Топ Товаров</h1>
+</div>
+
+<div class="section">
+        <div class="row">
+            {% for product_images in products_images %}
+                <div class="col-lg-2">
+                    <div class="product-item">
+                        <div>
+                            <img src="{{ product_image.image.url }}" class="img-responsive">
+                        </div>
+                        <h4>{{ products.name }}</h4>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+</div>
+
+
+{% endblock %}
+
+{% block basewomen %}
+
+{% endblock %}
